@@ -1,7 +1,7 @@
 ## Vulnerability Report (Revised)
 
 ### Introduction:
-This vulnerability report outlines a potential security flaw identified in the `com.mm.android.smartlifeiot` app's `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
+This vulnerability report outlines a potential security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
 
 
 
