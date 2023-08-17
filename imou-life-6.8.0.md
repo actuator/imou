@@ -3,6 +3,8 @@
 ### Introduction:
 This vulnerability report outlines a potential security flaw identified in the `com.mm.android.smartlifeiot` app's `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
 
+
+
 ### Affected Component:
 Activity: `com.mm.android.easy4ip.MainActivity`  
 App: `com.mm.android.smartlifeiot`
@@ -50,7 +52,7 @@ Upon executing this code, `com.mm.android.easy4ip.MainActivity` would be trigger
 
 ### Impact:
 
-A malicious actor can exploit this vulnerability to execute arbitrary JavaScript within the context of the vulnerable application. This could potentially lead to various attacks, including Remote Code Execution (RCE) if combined with other vulnerabilities, stealing session cookies or tokens, executing actions on behalf of the user within the app context, or displaying phishing content to the user.
+A malicious actor can exploit this vulnerability to execute arbitrary JavaScript within the context of the vulnerable application. This could potentially lead to various attacks, including stealing session cookies or tokens, executing actions on behalf of the user within the app context, or displaying phishing content to the user.
 
 ### MITRE CWE References:
 
@@ -67,6 +69,5 @@ A malicious actor can exploit this vulnerability to execute arbitrary JavaScript
 3. **Use Web Content Filtering**: Implement a whitelist of allowed domains or URLs that can be loaded in the WebView.
 4. **Flag Non-Exported**: If the MainActivity is not intended to be used by third-party apps, ensure that it's flagged as non-exported in the manifest.
 
-### Conclusion:
-
-The described vulnerability is significant and should be addressed promptly. The recommendations provided should be considered for implementation to mitigate the potential risks associated with this flaw.
+ TLDR: **Set Exported='False'**
+ ![image](https://github.com/actuator/imou/assets/78701239/ca4d4e27-3d5d-4a49-8fd9-2a7e60e29c37)
