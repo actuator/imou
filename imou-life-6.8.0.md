@@ -15,7 +15,8 @@ The `com.mm.android.easy4ip.MainActivity` activity in the `com.mm.android.smartl
 
 ### Proof of Concept:
 
-
+ ![image](https://github.com/actuator/imou/blob/main/pocGIF.gif)
+ 
 A third-party malicious app (`com.example.d3m0`) can craft and launch an intent targeting `com.mm.android.easy4ip.MainActivity` as follows:
 
 
@@ -61,3 +62,7 @@ A malicious actor can exploit this vulnerability to execute arbitrary JavaScript
 
  TLDR: **Set Exported='False'**
  ![image](https://github.com/actuator/imou/assets/78701239/ca4d4e27-3d5d-4a49-8fd9-2a7e60e29c37)
+
+
+
+ 
