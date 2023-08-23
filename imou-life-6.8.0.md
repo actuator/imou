@@ -1,7 +1,7 @@
 ## Vulnerability Report 
 
 ### Introduction:
-This vulnerability report outlines a security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary web content in the WebView of the vulnerable application.
+This vulnerability report outlines a security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`. An attacker can leverage this flaw using a third-party app to load arbitrary execution in the WebView of the vulnerable application.
 
 
 
@@ -11,7 +11,9 @@ App: `com.mm.android.smartlifeiot`
 
 ### Vulnerability Description:
 
-The `com.mm.android.easy4ip.MainActivity` activity in the `com.mm.android.smartlifeiot` app allows for the loading of URLs directly from intent data. This can be exploited by a malicious third-party app to force this activity to load malicious web content from a URL specified by the attacker.
+The com.mm.android.easy4ip.MainActivity activity within the com.mm.android.smartlifeiot app blindly loads URLs provided through intent data. 
+
+A malicious third-party app can exploit this oversight to trigger the loading of malicious web content, initiating unauthorized JavaScript web browser mining operations or remote code execution within the WebView.
 
 ### Proof of Concept:
 
@@ -46,7 +48,13 @@ Upon executing this code, `com.mm.android.easy4ip.MainActivity` would be trigger
 
 ### Impact:
 
-A malicious actor can exploit this vulnerability to execute arbitrary JavaScript within the context of the vulnerable application. This could potentially lead to various attacks, including stealing session cookies or tokens, executing actions on behalf of the user within the app context, or displaying phishing content to the user.
+An attacker can exploit this vulnerability to:
+
+Execute arbitrary JavaScript within the app's context, leading to remote code execution.
+
+Start unauthorized web browser mining operations, consuming device resources and potentially earning cryptocurrency for the attacker.
+
+Access the internet from a victim's device without necessary permissions in the malicious app's manifest.
 
 ### MITRE CWE References:
 
