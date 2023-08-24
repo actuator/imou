@@ -2,7 +2,8 @@
 
 ### Introduction:
 This vulnerability report outlines a security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`.
-A remote attacker can execute arbitrary code via insecure intent handling in the com.mm.android.easy4ip.MainActivity Android activity.
+
+A remote attacker can execute arbitrary code via insecure intent handling.
 
 
 ### Affected Component:
