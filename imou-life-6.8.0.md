@@ -16,6 +16,8 @@ The com.mm.android.easy4ip.MainActivity activity within the com.mm.android.smart
 
 A malicious third-party app can exploit this oversight to trigger the loading of malicious web content, initiating unauthorized JavaScript web browser mining operations or remote code execution within the WebView.
 
+**No permissions are required by 3rd party app.**
+
 ### Proof of Concept:
 
  ![image](https://github.com/actuator/imou/blob/main/pocGIF.gif)
