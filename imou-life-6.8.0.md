@@ -1,4 +1,4 @@
-## Vulnerability Report 
+## Vulnerability Report   
 
 ### Introduction:
 This vulnerability report outlines a security flaw identified in the `com.mm.android.smartlifeiot` app's exported activity: `com.mm.android.easy4ip.MainActivity`.
