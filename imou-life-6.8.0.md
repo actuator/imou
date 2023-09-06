@@ -72,7 +72,6 @@ Access the internet from a victim's device without necessary permissions in the 
 4. **Flag Non-Exported**: If the MainActivity is not intended to be used by third-party apps, ensure that it's flagged as non-exported in the manifest.
 
  TLDR: **Set Exported='False'**
- ![image](https://github.com/actuator/imou/assets/78701239/ca4d4e27-3d5d-4a49-8fd9-2a7e60e29c37)
 
 
 
