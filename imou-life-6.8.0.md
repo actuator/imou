@@ -1,4 +1,5 @@
-** This remains unpatched as of version 6.11.0
+** This remains unpatched as of version 6.12.1 **
+
 
 ## Vulnerability Report   
 
